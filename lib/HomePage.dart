@@ -66,18 +66,18 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver{
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            OutlinedButton(onPressed: _openFadePage, child: const Text("打开FadeAnimate")),
-            TextButton(child: Text(_shareText), onPressed: () { getShareText(); },),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            const CustomButton("自定义Widget")
-          ],
-      ),
+      body: Padding(padding: const EdgeInsets.all(16.0), child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          OutlinedButton(onPressed: _openFadePage, child: const Text("打开FadeAnimate")),
+          TextButton(child: Text(_shareText), onPressed: () { getShareText(); },),
+          Text(
+            '$_counter',
+            style: Theme.of(context).textTheme.headline4,
+          ),
+          const CustomButton("自定义Widget")
+        ],
+      )),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
